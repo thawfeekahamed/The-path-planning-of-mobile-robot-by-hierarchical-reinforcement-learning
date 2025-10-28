@@ -1,10 +1,78 @@
-# The-path-planning-of-mobile-robot-by-hierarchical-reinforcement-learning
-Autonomous robots are becoming increasingly prevalent in various domains, from manufacturing to healthcare and logistics. One of the critical capabilities required for autonomous robots is efficient path planning, enabling them to navigate complex environments while avoiding obstacles. In this project, we explore the application of Hierarchical Reinforcement Learning (HRL) to advance the path planning capabilities of a mobile robot.
+# The path planning of mobile robot by hierarchical reinforcement-learning 🚀  
 
-Traditional path planning algorithms often face challenges in dealing with complex environments and dynamic obstacles. Hierarchical Reinforcement Learning offers a promising solution by providing a framework that combines the benefits of both high-level and low-level decision-making processes. By breaking down the path planning task into multiple hierarchical levels, the robot can effectively navigate complex environments with improved efficiency and adaptability.
+### Project Overview  
+This repository contains the source code, hardware schematics, and documentation for an **autonomous mobile robot** designed to **mitigate infection transmission in healthcare environments**.  
 
-The objective of this project is to develop a mobile robot capable of autonomously planning its path in a given environment using Hierarchical Reinforcement Learning. By leveraging HRL techniques, we aim to create a system that can make high-level decisions for long-term goals while also making low-level decisions to handle immediate obstacles or changes in the environment.
+By leveraging **Hierarchical Reinforcement Learning (HRL)**, the robot autonomously navigates **complex, dynamic environments** (such as hospital wards) to deliver essential items like food and medicine directly to patients’ beds — minimizing physical interaction between patients and nursing staff during infectious outbreaks.  
 
-Throughout this project, we will focus on designing and training the hierarchical reinforcement learning architecture, integrating it with the mobile robot's perception and control systems, and evaluating its performance in simulated or real-world scenarios. We will explore concepts such as state representation, action selection, reward design, and training methodologies specific to hierarchical reinforcement learning.
+This project was developed as part of the **Final Year Interim Report** for the **Bachelor of Science in Engineering (Electronics & Telecommunication)** at **Sri Lanka Technological Campus (SLTC)**.
 
-By successfully implementing this project, we not only advance our understanding of reinforcement learning techniques but also enhance the autonomous navigation capabilities of mobile robots. This project opens up possibilities for deploying robots in dynamic environments, such as warehouses, hospitals, or even autonomous vehicles, where efficient path planning is crucial for safe and efficient operation.
+---
+
+## ✨ Key Features
+- **Infection Risk Mitigation** — Reduces high-risk contact between healthcare workers and infected patients.  
+- **Autonomous Navigation** — Navigates cluttered and dynamic hospital environments safely.  
+- **Hierarchical Reinforcement Learning (HRL)** — Divides learning into layered sub-tasks for faster, more adaptive decision-making.  
+- **Real-Time Adaptation** — Reacts to sudden dynamic obstacles using computer vision and optimization algorithms.  
+
+---
+
+## 💻 Technology Stack
+
+| **Category** | **Component / Technique** | **Purpose** |
+|---------------|---------------------------|--------------|
+| **Control Board** | ESP32 DevKit | Main controller for processing sensor data and motor control |
+| **Path Planning Core** | Hierarchical Reinforcement Learning (HRL) | Core AI for multi-step navigation and decision-making |
+| **Obstacle Detection** | HC-SR04 Ultrasonic Sensor | Real-time proximity detection and static obstacle avoidance |
+| **Shortest Path** | Zigbee Modules | Wireless communication and triangulation for efficient routing |
+| **Dynamic Navigation** | 5MP Camera + Simulated Annealing Algorithm | Visual obstacle detection and optimized evasive pathfinding |
+| **Motor Driver** | L298N | Speed and direction control of DC motors |
+| **Simulation Tools** | MATLAB / V-REP (CoppeliaSim) | Simulation, validation, and testing of navigation algorithms |
+
+---
+
+## 🧠 Hierarchical Reinforcement Learning (HRL) Approach  
+
+The HRL framework divides the robot’s overall “delivery” task into smaller, structured phases for faster learning and adaptability:
+
+### **Phase 1: Static Obstacle Identification & Avoidance**
+- **Goal:** Establish safe mobility in a static environment.  
+- **Mechanism:** Uses ultrasonic sensors and HRL-based rules to detect, stop, and avoid obstacles.
+
+### **Phase 2: Shortest Path Planning (Static Environment)**
+- **Goal:** Optimize travel path for minimal distance and time.  
+- **Mechanism:** Integrates Zigbee-based position tracking and HRL policies for efficient navigation.
+
+### **Phase 3: Dynamic Environment Navigation**
+- **Goal:** Handle moving obstacles and sudden changes in real-time.  
+- **Mechanism:** A 5MP camera captures dynamic scenes while the HRL model, enhanced with the **Simulated Annealing Algorithm**, computes optimal paths instantly.
+
+---
+
+## 🛠️ Setup and Installation
+
+### **Hardware Prerequisites**
+- ESP32 Development Board  
+- L298N Motor Driver  
+- HC-SR04 Ultrasonic Sensor  
+- Two Zigbee transceiver modules  
+- 5MP USB Camera  
+- Four-motor differential drive mobile robot chassis  
+
+### **Software Requirements**
+- **Arduino IDE / PlatformIO** → ESP32 firmware development  
+- **Python 3.x** → HRL training and simulation scripts  
+- **MATLAB / V-REP (CoppeliaSim)** → Simulation and performance testing  
+
+**Python Libraries:**  
+`TensorFlow` / `PyTorch`, `NumPy`, `Matplotlib`, and optionally `ROS` or `OMPL` for path planning frameworks.  
+
+---
+
+## 📊 Results and Validation  
+- Tested in simulated healthcare environments representing hospital wards.  
+- The robot accurately identified and reached target beds autonomously.  
+- Navigation precision and speed were **comparable to or better than** manual operation.  
+- The HRL model successfully balanced **long-term navigation goals** and **immediate obstacle avoidance**.  
+
+---
